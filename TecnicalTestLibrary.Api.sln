@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api", "TecnicalTestLibrary.Api\TecnicalTestLibrary.Api.csproj", "{8A191CB0-E0AC-4FAB-B551-50E786FC2A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api.Application", "TecnicalTestLibrary.Api.Application\TecnicalTestLibrary.Api.Application.csproj", "{E2EF3B87-DC7E-4B11-B2E2-3D8A418D4EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api.ApplicationService", "TecnicalTestLibrary.Api.ApplicationService\TecnicalTestLibrary.Api.ApplicationService.csproj", "{2FFFCD90-8E5E-4EC7-B9C9-6FA8866F692D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api.Domain", "TecnicalTestLibrary.Api.Domain\TecnicalTestLibrary.Api.Domain.csproj", "{FF5886AF-727C-4490-A464-84B20772B42A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api.DomainService", "TecnicalTestLibrary.Api.DomainService\TecnicalTestLibrary.Api.DomainService.csproj", "{DA53AE17-BD81-46CD-9845-8050440635C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecnicalTestLibrary.Api.Infrastructure", "TecnicalTestLibrary.Api.Infrastructure\TecnicalTestLibrary.Api.Infrastructure.csproj", "{2459CFCD-0D5A-4B71-BF13-6E6D170EBC7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A191CB0-E0AC-4FAB-B551-50E786FC2A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A191CB0-E0AC-4FAB-B551-50E786FC2A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A191CB0-E0AC-4FAB-B551-50E786FC2A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A191CB0-E0AC-4FAB-B551-50E786FC2A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2EF3B87-DC7E-4B11-B2E2-3D8A418D4EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EF3B87-DC7E-4B11-B2E2-3D8A418D4EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EF3B87-DC7E-4B11-B2E2-3D8A418D4EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EF3B87-DC7E-4B11-B2E2-3D8A418D4EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFFCD90-8E5E-4EC7-B9C9-6FA8866F692D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFFCD90-8E5E-4EC7-B9C9-6FA8866F692D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFFCD90-8E5E-4EC7-B9C9-6FA8866F692D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFFCD90-8E5E-4EC7-B9C9-6FA8866F692D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5886AF-727C-4490-A464-84B20772B42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5886AF-727C-4490-A464-84B20772B42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5886AF-727C-4490-A464-84B20772B42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5886AF-727C-4490-A464-84B20772B42A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA53AE17-BD81-46CD-9845-8050440635C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA53AE17-BD81-46CD-9845-8050440635C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA53AE17-BD81-46CD-9845-8050440635C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA53AE17-BD81-46CD-9845-8050440635C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2459CFCD-0D5A-4B71-BF13-6E6D170EBC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2459CFCD-0D5A-4B71-BF13-6E6D170EBC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2459CFCD-0D5A-4B71-BF13-6E6D170EBC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2459CFCD-0D5A-4B71-BF13-6E6D170EBC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00CAE697-6210-48D7-AE0C-D7FD6D02AF17}
+	EndGlobalSection
+EndGlobal
