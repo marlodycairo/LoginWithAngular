@@ -21,25 +21,26 @@ namespace TecnicalTestLibrary.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((context, config) =>
-                {
-                    var builtConfiguration = config.Build();
+                //// Codigo configuracion azure kvault
+                //.ConfigureAppConfiguration((context, config) =>
+                //{
+                //    var builtConfiguration = config.Build();
 
-                    string kvURL = builtConfiguration["KeyVaultConfig:KVUrl"];
+                //    string kvURL = builtConfiguration["KeyVaultConfig:KVUrl"];
 
-                    string tenantId = builtConfiguration["KeyVaultConfig:TenantId"];
+                //    string tenantId = builtConfiguration["KeyVaultConfig:TenantId"];
 
-                    string clientId = builtConfiguration["KeyVaultConfig:ClientId"];
+                //    string clientId = builtConfiguration["KeyVaultConfig:ClientId"];
 
-                    string clientSecret = builtConfiguration["KeyVaultConfig:ClientSecretId"];
+                //    string clientSecret = builtConfiguration["KeyVaultConfig:ClientSecretId"];
 
-                    var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
+                //    var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
 
-                    var client = new SecretClient(new Uri(kvURL), credential);
+                //    var client = new SecretClient(new Uri(kvURL), credential);
 
-                    config.AddAzureKeyVault(client, new AzureKeyVaultConfigurationOptions());
+                //    config.AddAzureKeyVault(client, new AzureKeyVaultConfigurationOptions());
 
-                })
+                //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
