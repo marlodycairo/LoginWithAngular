@@ -17,12 +17,13 @@ namespace TecnicalTestLibrary.Api.Controllers
             _context= context;
         }
 
-        [HttpGet]
-        public ActionResult<Response> Login(string username, string password)
+        [HttpPost]
+        [Route("Login")]
+        public ActionResult<Response> Login(User user)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Username == username && x.Pass == password);
+            var _user = _context.Users.FirstOrDefault(x => x.Username == user.Username && x.Pass == user.Pass);
 
-            if (username == null && password == null)
+            if (user.Username == null && user.Pass == null)
             {
                 return BadRequest(new Response { Message = "Debe ingresar el usuario y contraseña." });
             }

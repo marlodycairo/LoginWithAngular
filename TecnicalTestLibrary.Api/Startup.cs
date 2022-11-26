@@ -1,18 +1,12 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TecnicalTestLibrary.Api.Application;
 using TecnicalTestLibrary.Api.ApplicationService;
 using TecnicalTestLibrary.Api.Domain;
@@ -26,6 +20,8 @@ namespace TecnicalTestLibrary.Api
 {
     public class Startup
     {
+        private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,12 +32,22 @@ namespace TecnicalTestLibrary.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddCors(optionts =>
             {
-                optionts.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins(); //pendiente agregar origins
-                });
+                optionts.AddPolicy(name: MyAllowSpecificOrigins,
+                                    policy =>
+                                    {
+                                        //policy.WithOrigins("https://localhost:44392/api/Users")
+                                        policy.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                                    });
+
+                //optionts.AddDefaultPolicy(policy =>
+                //{
+                //    policy.WithOrigins("https://localhost:44392/api/Users");
+                //});
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -50,7 +56,7 @@ namespace TecnicalTestLibrary.Api
                 .AddFluentValidation(fv =>
                     fv.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
-            services.AddDbContext<ApplicationDbContext>(options => 
+            services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("ConnectionDB2"))
                 .EnableSensitiveDataLogging();
@@ -84,6 +90,8 @@ namespace TecnicalTestLibrary.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
